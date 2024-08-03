@@ -1,6 +1,6 @@
-# Crispwrite - Clean Blog Powered by 11ty
+# Crispwrite - Clean Blog Template
 
-A 11ty static site starter theme for a clean personal website and blog.
+A minimalist, fast-loading blog built with 11ty and Tailwind CSS. Clean design, optimized for readability and performance.
 
 ## Getting Started
 

@@ -2,7 +2,7 @@
 title: "Lorem ipsum dolor sit amet consectetur adipiscing"
 description: "Discover how mindfulness can enhance your productivity and lead to a more balanced work life."
 date: 2024-08-03
-image: "/assets/images/og.jpg"
+image: "/assets/images/sample.jpg"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere diam at mauris laoreet consequat. Phasellus augue magna, faucibus sit amet erat volutpat, elementum vestibulum libero. Mauris accumsan odio vitae lectus aliquet finibus. Mauris nec interdum tortor.

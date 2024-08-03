@@ -1,6 +1,6 @@
-# Your Project Name
+# Crispwrite - Clean Blog Powered by 11ty
 
-Brief description of your project.
+A 11ty static site starter theme for a clean personal website and blog.
 
 ## Getting Started
 
@@ -15,11 +15,11 @@ These instructions will get you a copy of the project up and running on your loc
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/your-repo-name.git
+   git clone https://github.com/deepakness/crispwrite.git
    ```
 2. Navigate to the project directory:
    ```
-   cd your-repo-name
+   cd crispwrite
    ```
 3. Install dependencies:
    ```
@@ -31,7 +31,7 @@ These instructions will get you a copy of the project up and running on your loc
 To start the development server:
 
 ```
-npm run serve
+npm run start
 ```
 
 This will start a local server and you can view your site at `http://localhost:8080`.
@@ -54,7 +54,3 @@ This will generate the static site in the `_site` directory.
 
 - [Eleventy](https://www.11ty.dev/) - Static Site Generator
 - [Tailwind CSS](https://tailwindcss.com/) - CSS Framework
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.

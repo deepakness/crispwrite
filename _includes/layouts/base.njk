@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if title %}{{ title }} - {% endif %}{{ metadata.title }}</title>
+    <meta name="description" content="{% if description %}{{ description }}{% else %}{{ metadata.description }}{% endif %}">
+    <meta name="author" content="{{ metadata.author.name }}">
+    <meta property="og:title" content="{% if title %}{{ title }} - {% endif %}{{ metadata.title }}">
+    <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ metadata.description }}{% endif %}">
+    <meta property="og:type" content="{% if layout == 'layouts/post.njk' %}article{% else %}website{% endif %}">
+    <meta property="og:url" content="{{ metadata.url }}{{ page.url }}">
+    <meta property="og:site_name" content="{{ metadata.title }}">
+    {% if image %}
+    <meta property="og:image" content="{{ metadata.url }}{{ image }}">
+    {% endif %}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="{{ metadata.author.twitter }}">
+    <link rel="canonical" href="{{ metadata.url }}{{ page.url }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</head>
+<body class="bg-white text-gray-900 leading-normal text-base">
+    <div class="flex flex-col min-h-screen">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            {% include "partials/header.njk" %}
+        </div>
+        <div class="flex-grow">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <main class="mt-10 prose prose-lg max-w-none">
+                    {{ content | safe }}
+                </main>
+            </div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            {% include "partials/footer.njk" %}
+        </div>
+    </div>
+</body>
+</html>

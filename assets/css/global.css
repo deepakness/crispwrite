@@ -1,0 +1,52 @@
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.content {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+.prose {
+  max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content > * + * {
+  margin-top: 1.5em;
+}
+
+.content li + li {
+  margin-top: 0.5em;
+}
+
+.content li > p + p {
+  margin-top: 1em;
+}
+
+.content img {
+  border-radius: 6px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

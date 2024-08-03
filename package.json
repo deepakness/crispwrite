@@ -1,0 +1,31 @@
+{
+  "name": "crispwrite",
+  "version": "1.0.0",
+  "description": "A simple and clean 11ty blog",
+  "scripts": {
+    "build": "npm-run-all -s build:css build:html",
+    "build:css": "postcss assets/css/tailwind.css -o _site/assets/css/styles.css",
+    "build:html": "eleventy",
+    "watch": "npm-run-all -p watch:css watch:html",
+    "watch:css": "postcss assets/css/tailwind.css -o _site/assets/css/styles.css --watch",
+    "watch:html": "eleventy --watch",
+    "serve": "eleventy --serve",
+    "start": "npm-run-all -p watch serve",
+    "debug": "DEBUG=* eleventy"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "alpinejs": "^3.10.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.13",
+    "autoprefixer": "^10.4.14",
+    "cssnano": "^6.0.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.24",
+    "postcss-cli": "^10.1.0",
+    "tailwindcss": "^3.3.2"
+  }
+}

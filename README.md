@@ -2,6 +2,10 @@
 
 A minimalist, fast-loading blog built with 11ty and Tailwind CSS. Clean design, optimized for readability and performance.
 
+## DEMO
+
+- [https://crispwrite.netlify.app/](https://crispwrite.netlify.app/)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.

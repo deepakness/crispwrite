@@ -10,8 +10,7 @@
     "watch:css": "postcss assets/css/tailwind.css -o _site/assets/css/styles.css --watch",
     "watch:html": "eleventy --watch",
     "serve": "eleventy --serve",
-    "start": "npm-run-all -p watch serve",
-    "debug": "DEBUG=* eleventy"
+    "start": "npm-run-all -p watch serve"
   },
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",

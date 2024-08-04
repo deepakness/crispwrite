@@ -18,7 +18,6 @@ module.exports = function(eleventyConfig) {
     return new Date(date).toISOString();
   });
 
-  // Add a simple collection for blog posts
   eleventyConfig.addCollection("posts", function(collectionApi) {
     return collectionApi.getFilteredByGlob("blog/*.md");
   });

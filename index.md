@@ -1,5 +1,5 @@
 ---
-title: Homepage
+title: Home
 layout: layouts/base.njk
 ---
 

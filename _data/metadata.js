@@ -1,6 +1,7 @@
 module.exports = {
   title: "John Doe",
-  url: "https://www.yourwebsite.com",
+  url: "https://johndoe.com",
+  icon: "/assets/images/author.jpg",
   language: "en",
   description: "Brief description of your website or yourself",
 

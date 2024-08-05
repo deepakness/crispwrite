@@ -7,15 +7,16 @@ module.exports = {
 
   author: {
     name: "John Doe",
-    email: "john@doe.com",
+    // email: "john@doe.com",
     url: "https://johndoe.com/about/",
     photo: "/assets/images/author.jpg",
     // Social media handles - remove or comment out any you don't use
     x: "johndoe",
     github: "johndoe",
-    linkedin: "johndoe",
+    // linkedin: "johndoe",
     youtube: "johndoe",
     // facebook: "johndoe",
-    // instagram: "johndoe"
+    // instagram: "johndoe",
+    // pinterest: "johndoe",
   }
 };

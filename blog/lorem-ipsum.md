@@ -5,7 +5,7 @@ date: 2024-08-03
 image: "/assets/images/sample.jpg"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere diam at mauris laoreet consequat. Phasellus augue magna, faucibus sit amet erat volutpat, elementum vestibulum libero. Mauris accumsan odio vitae lectus aliquet finibus. Mauris nec interdum tortor.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere diam at `mauris laoreet` consequat. Phasellus augue magna, faucibus sit amet erat volutpat, elementum vestibulum libero. Mauris accumsan odio vitae lectus aliquet finibus. Mauris nec interdum tortor.
 
 ## Mauris eget odio sit amet dui aliquam fermentum
 

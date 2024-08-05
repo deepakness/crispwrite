@@ -11,7 +11,7 @@ module.exports = {
     url: "https://johndoe.com/about/",
     photo: "/assets/images/author.jpg",
     // Social media handles - remove or comment out any you don't use
-    twitter: "johndoe",
+    x: "johndoe",
     github: "johndoe",
     linkedin: "johndoe",
     youtube: "johndoe",

@@ -12,7 +12,7 @@ module.exports = {
     photo: "/assets/images/author.jpg",
     // Social media handles - remove or comment out any you don't use
     x: "johndoe",
-    github: "johndoe",
+    github: "https://github.com/deepakness/crispwrite",
     // linkedin: "johndoe",
     youtube: "johndoe",
     // facebook: "johndoe",

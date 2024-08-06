@@ -10,6 +10,10 @@ A minimalist, fast-loading blog built with 11ty and Tailwind CSS. Clean design, 
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/deepakness/crispwrite)
 
+## DOCUMENTATION
+
+[Read Docs](https://github.com/deepakness/crispwrite/wiki)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -54,11 +58,11 @@ npm run build
 
 This will generate the static site in the `_site` directory.
 
-## Deployment
-
-[Add instructions for your preferred deployment method here]
-
 ## Built With
 
 - [Eleventy](https://www.11ty.dev/) - Static Site Generator
 - [Tailwind CSS](https://tailwindcss.com/) - CSS Framework
+
+## Additional Help
+
+If you require additional help with the set up, customization, deployment, or anything related, please visit the [documentation wiki](https://github.com/deepakness/crispwrite/wiki).

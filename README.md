@@ -10,6 +10,8 @@ A minimalist, fast-loading blog built with 11ty and Tailwind CSS. Clean design, 
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/deepakness/crispwrite)
 
+![Crispwrite Screenshot](/screenshot.png)
+
 ## DOCUMENTATION
 
 [Read Docs](https://github.com/deepakness/crispwrite/wiki)

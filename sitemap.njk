@@ -7,7 +7,7 @@ eleventyExcludeFromCollections: true
     {% for page in collections.all %}
         <url>
             <loc>{{ metadata.url }}{{ page.url | url }}</loc>
-            <lastmod>{{ page.date | dateToRfc822 }}</lastmod>
+            <lastmod>{{ page.date | dateToRfc3339 }}</lastmod>
             <changefreq>{{ page.data.changeFreq if page.data.changeFreq else "monthly" }}</changefreq>
         </url>
     {% endfor %}

@@ -4,7 +4,9 @@ layout: layouts/base.njk
 <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     <header class="mb-8">
         <h1 class="text-3xl font-bold mb-2 text-gray-900">{{ title }}</h1>
-        <p class="text-gray-600 mb-4">{{ date | readableDate }}</p>
+        <p class="text-sm text-gray-600 mb-4">
+          <time datetime="{{ date | dateToRfc3339 }}">{{ date | readableDate }}</time>
+        </p>
     </header>
 
     <div class="prose prose-lg max-w-none content">

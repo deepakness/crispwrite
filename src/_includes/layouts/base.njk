@@ -1,40 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ metadata.language }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if title %}{{ title }} - {% endif %}{{ metadata.title }}</title>
     <meta name="description" content="{% if description %}{{ description }}{% else %}{{ metadata.description }}{% endif %}">
     <meta name="author" content="{{ metadata.author.name }}">
+    <meta name="theme-color" content="{{ metadata.themeColor }}">
+
     <meta property="og:title" content="{% if title %}{{ title }} - {% endif %}{{ metadata.title }}">
     <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ metadata.description }}{% endif %}">
     <meta property="og:type" content="{% if layout == 'layouts/post.njk' %}article{% else %}website{% endif %}">
     <meta property="og:url" content="{{ metadata.url }}{{ page.url }}">
     <meta property="og:site_name" content="{{ metadata.title }}">
-    {% if image %}
-    <meta property="og:image" content="{{ metadata.url }}{{ image }}">
-    {% endif %}
+    <meta property="og:locale" content="{{ metadata.locale }}">
+    <meta property="og:image" content="{{ metadata.url }}{{ image or metadata.socialImage }}">
+
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:creator" content="{{ metadata.author.twitter }}">
+    {% if metadata.author.xHandle %}<meta name="twitter:creator" content="{{ metadata.author.xHandle }}">{% endif %}
+    <meta name="twitter:title" content="{% if title %}{{ title }} - {% endif %}{{ metadata.title }}">
+    <meta name="twitter:description" content="{% if description %}{{ description }}{% else %}{{ metadata.description }}{% endif %}">
+    <meta name="twitter:image" content="{{ metadata.url }}{{ image or metadata.socialImage }}">
     <link rel="canonical" href="{{ metadata.url }}{{ page.url }}">
 
-    <!-- Icon -->
-    <link rel="icon" type="image/png"  href="{{ metadata.icon }}">
-
-    <!-- Resources -->
+    <link rel="icon" type="image/png" href="{{ metadata.icon }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 <body class="bg-white text-gray-900 leading-normal text-base">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:bg-white focus:px-3 focus:py-2 focus:rounded-md focus:shadow">Skip to content</a>
     <div class="flex flex-col min-h-screen">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             {% include "partials/header.njk" %}
         </div>
         <div class="flex-grow">
             <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-                <main class="mt-10 prose prose-lg max-w-none">
+                <main id="main-content" class="mt-10 prose prose-lg max-w-none">
                     {{ content | safe }}
                 </main>
             </div>
@@ -43,5 +48,7 @@
             {% include "partials/footer.njk" %}
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 </body>
 </html>

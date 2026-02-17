@@ -2,6 +2,11 @@
 title: "Lorem ipsum dolor sit amet consectetur adipiscing"
 description: "Discover how mindfulness can enhance your productivity and lead to a more balanced work life."
 date: 2024-08-03
+tags:
+  - productivity
+  - mindfulness
+  - writing
+draft: false
 image: "/assets/images/sample.jpg"
 ---
 

@@ -1,0 +1,19 @@
+---
+layout: layouts/base.njk
+title: Search
+description: Search all posts.
+permalink: /search/
+---
+
+<section class="not-prose">
+  <h1 class="text-4xl font-bold mb-2">Search</h1>
+  <p class="text-gray-600 mb-6">Find posts by title, description, tags, or content.</p>
+
+  <label for="search-input" class="sr-only">Search posts</label>
+  <input id="search-input" type="search" placeholder="Type to search..." class="w-full border border-gray-300 rounded-md px-4 py-3 mb-6" />
+
+  <ul id="search-results" class="space-y-5"></ul>
+  <p id="search-empty" class="text-gray-600 hidden">No results found.</p>
+</section>
+
+<script src="/assets/js/search.js" defer></script>

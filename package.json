@@ -4,13 +4,15 @@
   "description": "A simple and clean 11ty blog",
   "scripts": {
     "build": "npm-run-all -s build:css build:html",
-    "build:css": "postcss assets/css/tailwind.css -o _site/assets/css/styles.css",
+    "build:css": "postcss src/assets/css/tailwind.css -o _site/assets/css/styles.css",
     "build:html": "eleventy",
     "watch": "npm-run-all -p watch:css watch:html",
-    "watch:css": "postcss assets/css/tailwind.css -o _site/assets/css/styles.css --watch",
+    "watch:css": "postcss src/assets/css/tailwind.css -o _site/assets/css/styles.css --watch",
     "watch:html": "eleventy --watch",
     "serve": "eleventy --serve",
-    "start": "npm-run-all -p watch serve"
+    "start": "npm-run-all -p watch serve",
+    "build:strict": "STRICT_METADATA=true npm run build",
+    "new:post": "node scripts/new-post.js"
   },
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",

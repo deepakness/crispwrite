@@ -7,7 +7,7 @@
       </a>
       {% endif %}
       <a href="/" class="font-semibold text-lg mr-4 truncate">{{ metadata.title }}</a>
-      <div class="hidden md:flex space-x-4">
+      <div class="flex items-center shrink-0 gap-2 sm:gap-4">
         {% if metadata.author.email %}
         <a href="mailto:{{ metadata.author.email }}" class="text-gray-400 hover:text-gray-600 focus-visible:outline-blue-600" target="_blank" rel="noopener noreferrer" aria-label="Email">
           <span class="sr-only">Email</span>

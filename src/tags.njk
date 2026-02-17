@@ -1,0 +1,20 @@
+---
+layout: layouts/base.njk
+title: Tags
+description: Browse posts by topic.
+permalink: /tags/
+---
+
+<h1 class="text-4xl font-bold mb-6">Tags</h1>
+
+<ul class="flex flex-wrap gap-3 list-none p-0">
+  {% for tag in collections.tagList %}
+  <li>
+    <a href="/tags/{{ tag | slugify }}/" class="inline-flex px-3 py-1 rounded-full text-sm bg-gray-100 text-gray-800 hover:bg-gray-200">
+      #{{ tag }}
+    </a>
+  </li>
+  {% else %}
+  <li class="text-gray-600">No tags yet. Add tags to posts in <code>src/blog/</code>.</li>
+  {% endfor %}
+</ul>

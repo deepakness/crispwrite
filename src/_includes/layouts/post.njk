@@ -1,0 +1,67 @@
+---
+layout: layouts/base.njk
+---
+{% set posts = collections.posts | reverse %}
+{% set currentIndex = -1 %}
+{% for postItem in posts %}
+  {% if postItem.url == page.url %}
+    {% set currentIndex = loop.index0 %}
+  {% endif %}
+{% endfor %}
+
+<article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header class="mb-8 not-prose">
+        <a href="/blog" class="text-sm text-blue-700 hover:text-blue-800">← Back to all posts</a>
+        <h1 class="text-3xl font-bold mb-2 mt-2 text-gray-900 leading-tight">{{ title }}</h1>
+        <p class="text-sm text-gray-600 mb-3">
+          <time datetime="{{ date | dateToRfc3339 }}">{{ date | readableDate }}</time> · {{ content | readingTime }}
+        </p>
+        {% if description %}<p class="text-base text-gray-700 mb-3">{{ description }}</p>{% endif %}
+        {% if tags %}
+        <ul class="flex flex-wrap gap-2 list-none p-0">
+          {% for tag in tags %}
+          {% if tag != 'posts' %}
+          <li><a class="inline-flex px-2 py-1 rounded-full text-xs bg-gray-100 text-gray-700 hover:bg-gray-200" href="/tags/{{ tag | slugify }}/">#{{ tag }}</a></li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+        {% endif %}
+    </header>
+
+    <div class="prose prose-lg max-w-none content">
+        {{ content | safe }}
+    </div>
+
+    <nav class="not-prose mt-10 border-t border-gray-200 pt-6 grid sm:grid-cols-2 gap-4">
+      <div>
+      {% if currentIndex + 1 < posts.length %}
+        {% set prevPost = posts[currentIndex + 1] %}
+        <p class="text-xs uppercase tracking-wide text-gray-500 mb-1">Previous</p>
+        <a class="text-blue-700 hover:text-blue-800 font-semibold" href="{{ prevPost.url }}">{{ prevPost.data.title }}</a>
+      {% endif %}
+      </div>
+      <div class="sm:text-right">
+      {% if currentIndex > 0 %}
+        {% set nextPost = posts[currentIndex - 1] %}
+        <p class="text-xs uppercase tracking-wide text-gray-500 mb-1">Next</p>
+        <a class="text-blue-700 hover:text-blue-800 font-semibold" href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
+      {% endif %}
+      </div>
+    </nav>
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ title }}",
+  "datePublished": "{{ date | dateToRfc3339 }}",
+  "dateModified": "{{ date | dateToRfc3339 }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ metadata.author.name }}"
+  },
+  "description": "{{ description or metadata.description }}",
+  "mainEntityOfPage": "{{ metadata.url }}{{ page.url }}"
+}
+</script>

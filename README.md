@@ -1,70 +1,95 @@
-# Crispwrite - Clean Blog Template
+# Crispwrite
 
-A minimalist, fast-loading blog built with 11ty and Tailwind CSS. Clean design, optimized for readability and performance.
+A clean, minimal, and fast Eleventy blog starter built with Tailwind CSS.
 
-## DEMO
+## Demo
 
-- [https://crispwrite.netlify.app/](https://crispwrite.netlify.app/)
+- https://crispwrite.netlify.app/
 
-## QUICK DEPLOY
+## Highlights
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/deepakness/crispwrite)
+- Public content isolated under `src/`
+- Blog, tags, and built-in client-side search
+- Draft workflow (`draft: true`) so unpublished posts stay private
+- RSS feed, sitemap, social metadata, and custom 404
+- Accessibility-first defaults (skip link, focus states, keyboard-friendly menu)
+- CI build with strict metadata validation in pull requests
 
-![Crispwrite Screenshot](/screenshot.png)
+## Project structure
 
-## DOCUMENTATION
+```text
+src/
+  _data/        # Site metadata/helpers
+  _includes/    # Layouts + partials
+  assets/       # CSS + images
+  blog/         # Markdown posts
+  tags/         # Tag index + tag pages
+  search/       # Search page
+```
 
-[Read Docs](https://github.com/deepakness/crispwrite/wiki)
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+## Getting started
 
 ### Prerequisites
 
-- Node.js (version 12 or higher)
-- npm (usually comes with Node.js)
+- Node.js 18+
+- npm
 
-### Installation
+### Install
 
-1. Clone the repository:
-   ```
-   git clone https://github.com/deepakness/crispwrite.git
-   ```
-2. Navigate to the project directory:
-   ```
-   cd crispwrite
-   ```
-3. Install dependencies:
-   ```
-   npm install
-   ```
-
-### Development
-
-To start the development server:
-
+```bash
+git clone https://github.com/deepakness/crispwrite.git
+cd crispwrite
+npm install
 ```
+
+### Configure metadata (required)
+
+Before publishing, update placeholders in `src/_data/metadata.js`:
+
+- `url`
+- `author.name`
+- social handles/links
+
+CI enforces strict metadata checks via `npm run build:strict`.
+
+### Run locally
+
+```bash
 npm run start
 ```
 
-This will start a local server and you can view your site at `http://localhost:8080`.
+Open http://localhost:8080.
 
-### Building for Production
+### Production build
 
-To build the site for production:
-
-```
+```bash
 npm run build
 ```
 
-This will generate the static site in the `_site` directory.
+Output is generated in `_site/`.
 
-## Built With
+## Writing posts
 
-- [Eleventy](https://www.11ty.dev/) - Static Site Generator
-- [Tailwind CSS](https://tailwindcss.com/) - CSS Framework
+Create a draft post scaffold:
 
-## Additional Help
+```bash
+npm run new:post -- "My New Post"
+```
 
-If you require additional help with the set up, customization, deployment, or anything related, please visit the [documentation wiki](https://github.com/deepakness/crispwrite/wiki).
+Then edit the generated file in `src/blog/`.
+
+- Draft posts use `draft: true` and are excluded from site output collections.
+- Add tags in frontmatter to power tag pages and search.
+
+## Search and tags
+
+- Search page: `/search`
+- Tags index: `/tags`
+
+## Contributing
+
+Contributions are welcome. Please read [CONTRIBUTING.md](./CONTRIBUTING.md).
+
+## License
+
+MIT — see [LICENSE](./LICENSE).

@@ -1,0 +1,32 @@
+---
+pagination:
+  data: collections.tagList
+  size: 1
+  alias: tag
+permalink: "/tags/{{ tag | slugify }}/"
+layout: layouts/base.njk
+eleventyComputed:
+  title: "Tag: {{ tag }}"
+  description: "Posts filed under {{ tag }}"
+---
+
+<h1 class="text-4xl font-bold mb-2">#{{ tag }}</h1>
+<p class="text-gray-600 mb-8">Posts tagged with {{ tag }}.</p>
+
+<ul class="space-y-6">
+{% for post in collections.posts | reverse %}
+  {% if tag in post.data.tags %}
+  <li class="border-b border-gray-200 pb-6">
+    <h2 class="text-2xl mb-2 leading-tight">
+      <a href="{{ post.url }}" class="text-blue-700 hover:text-blue-800 hover:underline">{{ post.data.title }}</a>
+    </h2>
+    <p class="text-sm text-gray-600 mb-2">
+      <time datetime="{{ post.date | dateToRfc3339 }}">{{ post.date | readableDate }}</time> · {{ post.templateContent | readingTime }}
+    </p>
+    {% if post.data.description %}
+    <p class="text-base text-gray-700 mb-3">{{ post.data.description }}</p>
+    {% endif %}
+  </li>
+  {% endif %}
+{% endfor %}
+</ul>

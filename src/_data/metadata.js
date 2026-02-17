@@ -4,7 +4,7 @@ module.exports = {
   icon: "/assets/images/author.jpg",
   language: "en",
   locale: "en_US",
-  description: "A clean, fast, open-source Eleventy starter for personal blogs and developer writing.",
+  description: "A clean, fast, open-source Eleventy starter template for personal blogs and developer writing.",
   themeColor: "#ffffff",
   socialImage: "/assets/images/sample.jpg",
   feed: {
